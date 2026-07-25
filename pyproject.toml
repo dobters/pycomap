@@ -1,6 +1,6 @@
 [project]
 name = "pycomap"
-version = "2.3.0"
+version = "2.3.1"
 description = "Async Python client for ComAp controllers: LAN discovery and the native ECDH/AES-encrypted control protocol"
 readme = "README.md"
 license = "MIT"
@@ -26,11 +26,11 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/igor-panteleev/pycomap"
-Documentation = "https://igor-panteleev.github.io/pycomap/"
-Source = "https://github.com/igor-panteleev/pycomap"
-Issues = "https://github.com/igor-panteleev/pycomap/issues"
-Changelog = "https://github.com/igor-panteleev/pycomap/releases"
+Homepage = "https://github.com/dobters/pycomap"
+Documentation = "https://dobters.github.io/pycomap/"
+Source = "https://github.com/dobters/pycomap"
+Issues = "https://github.com/dobters/pycomap/issues"
+Changelog = "https://github.com/dobters/pycomap/releases"
 
 [build-system]
 requires = ["uv_build>=0.9.26,<0.12.0"]

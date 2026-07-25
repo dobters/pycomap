@@ -1,8 +1,8 @@
 site_name: pycomap
-site_url: https://igor-panteleev.github.io/pycomap/
+site_url: https://dobters.github.io/pycomap/
 site_description: Async Python client for ComAp controllers
-repo_url: https://github.com/igor-panteleev/pycomap
-repo_name: igor-panteleev/pycomap
+repo_url: https://github.com/dobters/pycomap
+repo_name: dobters/pycomap
 
 theme:
   name: material
