@@ -82,4 +82,7 @@ jobs:
   docs:
     needs: release
     if: needs.release.outputs.tag_created == 'true' && needs.release.outputs.is_prerelease == 'false'
+    permissions:
+      pages: write
+      id-token: write
     uses: ./.github/workflows/deploy-docs.yml
