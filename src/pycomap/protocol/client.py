@@ -109,6 +109,10 @@ class ComApClient[TransportT: Transport]:
 
     async def connect(self) -> None:
         """Open the transport and consume the controller's unsolicited ``VersionIB``."""
+        # Start from a clean slate so a client reused after a failed session doesn't carry
+        # over the previous session's framing mode or cipher state.
+        self._mode = _Mode.NONE
+        self._cipher = None
         await self._transport.connect()
 
         message = await self._read_message()

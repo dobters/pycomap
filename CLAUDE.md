@@ -54,8 +54,8 @@ from pycomap.protocol import ComApClient
 
 async with Controller(
     ComApClient(EthernetTransport(IPv4Address("192.168.1.9"))),
-    access_code="0",   # factory default (drives ECDH key derivation)
-    password=1234,     # write-protection password (0-9999); omit for read-only
+    access_code="0",  # factory default (drives ECDH key derivation)
+    password=1234,  # write-protection password (0-9999); omit for read-only
 ) as ctrl:
     values = await ctrl.read_values()
     print(values)
