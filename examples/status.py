@@ -42,11 +42,15 @@ async def main(
     # -- Values (grouped by Group, fall back to ValueCategory) ----------------
     header = f"{'NAME':<40} {'VALUE':>12}  UNIT"
     rule = "-" * 60
+
+    def group_of(d: ValueDescription) -> str:
+        return d.group or "(ungrouped)"
+
     visible = sorted(
         (d for d in ctrl.values if show_invisible or d.group != "Invisible"),
-        key=lambda d: d.group,
+        key=group_of,
     )
-    for group_label, group_iter in itertools.groupby(visible, key=lambda d: d.group):
+    for group_label, group_iter in itertools.groupby(visible, key=group_of):
         print(f"\n{group_label}")
         print(header)
         print(rule)

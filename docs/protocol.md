@@ -222,8 +222,8 @@ Repeat        = 5
    `"0"`), via **double HMAC-SHA256** keyed by the access code:
    ```python
    access_bytes = access_code.encode("utf-8")
-   aes_key = hmac.new(access_bytes, shared_secret, hashlib.sha256).digest()        # 32 bytes -> AES-256 key
-   iv      = hmac.new(access_bytes, aes_key,       hashlib.sha256).digest()[:16]   # 16 bytes
+   aes_key = hmac.new(access_bytes, shared_secret, hashlib.sha256).digest()  # 32 bytes -> AES-256 key
+   iv = hmac.new(access_bytes, aes_key, hashlib.sha256).digest()[:16]  # 16 bytes
    ```
 9. From here on, the outer block-wrapper's payload is **AES-256-CBC ciphertext** of the inner
    `EthernetMessage` (zero-padded to a 16-byte boundary before encryption — `PaddingMode.Zeros`
@@ -283,8 +283,8 @@ To write a password-protected setpoint (one where a plain `write_object` returns
 AES channel, then perform the setpoint write:
 
 ```python
-await client.authenticate("0")          # AccessCode — derives the AES key
-await client.elevate_access(1234)       # Password  — CommunicationObject 24524
+await client.authenticate("0")  # AccessCode — derives the AES key
+await client.elevate_access(1234)  # Password  — CommunicationObject 24524
 await client.write_object(number, raw)  # setpoint write now succeeds
 ```
 
